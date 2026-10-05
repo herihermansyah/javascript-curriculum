@@ -6,7 +6,7 @@
 
 const myName = "Herman";
 
-// myName = "salimah"; // TypeError: Assignment to constant variable.
+myName = "salimah"; // TypeError: Assignment to constant variable.
 console.log(myName); // Herman
 
 function myFunction(name) {
@@ -70,3 +70,45 @@ console.log(myFucntion2()); // coba5
 }
 console.log(coba6); // ReferenceError: coba6 is not defined
 console.log(myFucntion3()); // coba6
+
+// ============= what is hoisting in the javacsript ==============
+// hoisting in javascript is a behavior or conceptually moving declarations to the top of their current scope (either global or function scope)
+// why arrow function do not work with hoisting ? : becasue they are treated as a variable assignment const or let rather than traditional function declaration
+// what is temporal dead zone ? : the temporal in javascript is a specific behavior where let and const variable are inaccesible from the moment their enclosing scope
+
+console.log(name2); // undefined
+let name2 = "heri";
+console.log(name2); // heri
+
+console.log(name3); // ReferenceError: Cannot access 'name3' before initialization
+var name3 = "heri";
+
+console.log(name4); // ReferenceError: Cannot access 'name4' before initialization
+const name4 = "heri";
+
+console.log(myFunction4()); // hello
+function myFunction4() {
+  return "hello";
+}
+
+console.log(myFunction6()); // ReferenceError: Cannot access 'myFunction6' before initialization
+console.log(myFunction5()); // hello
+
+function myFunction5() {
+  myFunction6();
+  console.log("hello");
+  function myFunction6() {
+    console.log("see you");
+  }
+}
+console.log(myFunction5()); // hello
+
+// arrow funciton do not work with hoisting
+console.log(myFucntion7()); // ReferenceError: Cannot access 'myFunction6' before initialization
+const myFucntion7 = () => {
+  myFunction8();
+  console.log("hello");
+  function myFunction8() {
+    console.log("see you");
+  }
+};
