@@ -69,7 +69,83 @@ console.log(h); // true - string "4" is coerced to a number and compared to 5
 let i = String(5 >= "2");
 console.log(i); // "true" - string "2" is coerced to a number and compared to 5
 
-
-// BigInt data type for handling and storing big integer values
+// // BigInt data type for handling and storing big integer values
 let j = 12n;
 console.log(typeof j); // 12n - bigint
+
+// pure function and side effect in javascript
+// pure funciton : a function that always return the smame output for the same input
+// side effect : a side effect occurs when a function interacts with the outside component or modifies something outside its own scope
+
+// pure function:
+// non-mutating methods : [...spread, item], .concat, .map, .filter, .slice
+function calculate(a, b) {
+  return a + b;
+}
+const result = calculate(2, 3);
+console.log(result); // Output: 5 - the function always returns the same output for the same input
+console.log(`=====================================================`);
+
+const data = [
+  {
+    name: "Heri herman",
+    age: 30,
+  },
+  {
+    name: "A salimah",
+    age: 2,
+  },
+];
+
+const data2 = [
+  { name: "ali", age: 35 },
+  { name: "ahmad", age: 40, address: "jakarta" },
+];
+
+const data3 = {
+  name: "mamat",
+  age: 25,
+};
+
+function getNames(array1, array2) {
+  return [...array1, ...array2];
+}
+
+const result2 = getNames(data, data2);
+console.log(result2);
+
+function filteredData(array) {
+  return array.filter((data) => data.age >= 5);
+}
+const result4 = filteredData(data);
+console.log(result4);
+console.log(`============================================`);
+
+// impure function with side effect:
+// mutating methods : .push, .pop, .unshift, .shift, .splice, .reverse, .sort
+
+let age = 30;
+function changeAge(newAge) {
+  age = newAge; // side effect: modifies the variable age outside its own scope
+  return age;
+}
+
+let newAge = changeAge(25);
+console.log(age); // Output: 25 - the variable age is modified by the function
+console.log(newAge); // Output: 25 - the function modifies the age variable and returns the new value
+
+function getData(array1, array2) {
+  array1.push(array2);
+  return array1;
+}
+
+const result3 = getData(data, data3);
+console.log(result3);
+
+function sortData(array) {
+  array.sort((a, b) => a.age - b.age);
+  return array;
+}
+
+const result5 = sortData(data);
+console.log(result5);
