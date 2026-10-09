@@ -15,86 +15,86 @@
 // * this keyword : this is lexically inherited from the surrounding scope, not the funciton itself.
 // * new keyword : cannot be used as constructors and do not support the new keyword.
 
-// function test(name, age) {
-// //   return arguments;
-//   return `argument : ${arguments} = parameter =  name: ${name}, age: ${age}`;
-// }
+function test(name, age) {
+//   return arguments;
+  return `argument : ${arguments} = parameter =  name: ${name}, age: ${age}`;
+}
 
-// console.log(test("arguments", "herman", 12));
+console.log(test("arguments", "herman", 12));
 
-// function test1(a, b, a, b) {
-//   console.log(a, b);
-// }
-// test1(5, 10, 3, 2);
+function test1(a, b, a, b) {
+  console.log(a, b);
+}
+test1(5, 10, 3, 2);
 
-// console.log(test3(10, 20));
-// function test3(a, b) {
-//   return a + b;
-// }
+console.log(test3(10, 20));
+function test3(a, b) {
+  return a + b;
+}
 
-// const person = {
-//   name: "herman",
-//   age: 30,
-//   introduce() {
-//     return `my name is ${this.name} and i'm ${this.age} years old`;
-//   },
-// };
+const person = {
+  name: "herman",
+  age: 30,
+  introduce() {
+    return `my name is ${this.name} and i'm ${this.age} years old`;
+  },
+};
 
-// console.log(person.introduce());
+console.log(person.introduce());
 
-// function person1(name) {
-//   this.name = name;
-// }
+function person1(name) {
+  this.name = name;
+}
 
-// const name = new person1("herman");
-// const age = new person1(30);
-// console.log(age);
+const name = new person1("herman");
+const age = new person1(30);
+console.log(age);
 
-// const introduce = `my name is ${name} and i'm ${age} years old`
-// console.log(introduce);
+const introduce = `my name is ${name} and i'm ${age} years old`
+console.log(introduce);
 
 
 
 
 // =============== arrow function =======
 
-// const arrow = (a, b) => {
-//   return a + b;
-// };
+const arrow = (a, b) => {
+  return a + b;
+};
 
-// console.log(arrow(10, 10));
+console.log(arrow(10, 10));
 
-// let arrow2 = (...arr) => {
-//     return arr
-//     // return arguments
-// }
+let arrow2 = (...arr) => {
+    return arr
+    // return arguments
+}
 
-// console.log(arrow2("sdfdsf", "sdfsdfdsf", 324324));
+console.log(arrow2("sdfdsf", "sdfsdfdsf", 324324));
 
-// let arrow3 = (a, b ) => {
-//     return a + b
-// }
+let arrow3 = (a, b ) => {
+    return a + b
+}
 
-// console.log(arrow3(234, 324));
+console.log(arrow3(234, 324));
 
-// console.log(arrow4(1, "5"));
-// // cannot access arrow4 before initialization
-// let arrow4 = (number, string) => {
-//   return number + string;
-// };
+console.log(arrow4(1, "5"));
+// cannot access arrow4 before initialization
+let arrow4 = (number, string) => {
+  return number + string;
+};
 
-// let obj = {
-//   name: "apple",
-//   stock: 30,
-//   getThis: () => {
-//     console.log(this.stock);
-//     // undefined
-//   },
-// };
+let obj = {
+  name: "apple",
+  stock: 30,
+  getThis: () => {
+    console.log(this.stock);
+    // undefined
+  },
+};
 
-// obj.getThis()
+obj.getThis()
 
-// let obj2 = () => {};
-// let name = new obj2("apple");
-// console.log(name); // object is not constructor
+let obj2 = () => {};
+let name2 = new obj2("apple");
+console.log(name2); // object is not constructor
 
