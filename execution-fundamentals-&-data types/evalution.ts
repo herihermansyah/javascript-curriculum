@@ -47,15 +47,21 @@ type ProdcutTypes = {
 // createObject(names);
 // console.log(result);
 
-const dataStore = {
-  datas: [] as ProdcutTypes[],
-  createData(
+interface DataStore {
+  datas: ProdcutTypes[];
+  createData: (
     id: number,
     name: string,
     brand: string,
     stock: number,
     price: number,
-  ) {
+  ) => void;
+  deleteData: (id: number) => void;
+}
+
+const dataStore: DataStore = {
+  datas: [],
+  createData(id, name, brand, stock, price) {
     const exist = this.datas.find(
       (item) => item.name === name || item.id === id,
     );
@@ -69,7 +75,7 @@ const dataStore = {
     this.datas.push({ id, name, brand, stock, price });
   },
 
-  deleteData(id: number) {
+  deleteData(id) {
     this.datas = this.datas.filter((item) => item.id !== id);
   },
 };
