@@ -18,28 +18,35 @@ let person = {
 };
 
 // when you need to change the values you can using object literal
-let { name, age } = person;
-const newPerson = { age: 20 };
-({ age } = newPerson);
+{
+  let { name: personName, age: personAge } = person;
+  const newPerson = { age: 20 };
+  ({ age: personAge } = newPerson);
+  console.log(personName, personAge);
+}
 
 // when you need add or give default values you can using destructuring
 // destructuring cannot change the original object
-const { name, age = 20, phone = 23323 } = person;
-console.log(name, age, phone);
+{
+  const { name, age = 20, phone = 23323 } = person;
+  console.log(name, age, phone);
+}
 console.log(`======================`);
 console.log(person);
 
 // this way to destructuring nested object
-const {
-  name,
-  age,
-  address: {
-    address,
-    call: { fax },
-  },
-} = person;
+{
+  const {
+    name: nestedName,
+    age: nestedAge,
+    address: {
+      address: homeAddress,
+      call: { fax },
+    },
+  } = person;
 
-console.log(name, age, address, fax);
+  console.log(nestedName, nestedAge, homeAddress, fax);
+}
 
 // ====================== array destructuring ======================
 
