@@ -1,0 +1,26 @@
+.title {
+  text-align: center;
+}
+
+#outer_square {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.hidden {
+  display: none !important;
+  transition: all;
+  transition-duration: 4s;
+}
+
+.square {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+}
+
+.description_1 {
+  z-index: 10;
+}
