@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event propagation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="h1">event propagation</h1>
+    <div>
+      <input type="text" class="input-one" />
+      <button class="myButton">search</button>
+      <p id="result">result :</p>
+    </div>
+    <br />
+    <div>
+      <form id="mySubmit">
+        <label for="name">name : </label>
+        <input type="text" name="name" id="name" />
+        <br />
+        <br />
+        <label for="number">number : </label>
+        <input type="number" name="number" id="number" />
+        <br />
+        <br />
+        <button type="submit" id="theButton">submit</button>
+      </form>
+      <div>
+        <h2>biodata</h2>
+        <h5 id="resultName">Name :</h5>
+        <h5 id="resultNumber">Number :</h5>
+      </div>
+    </div>
+  </body>
+  <script src="script.js" defer></script>
+</html>
